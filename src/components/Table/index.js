@@ -7,11 +7,8 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import Button from "@material-ui/core/Button";
-import VisibilityIcon from "@material-ui/icons/Visibility";
-import EditIcon from "@material-ui/icons/Edit";
-import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import ModalDelete from 'components/ModalDelete';
+import ModalEdit from 'components/ModalEdit';
 
 const StyledTableCell = withStyles((theme) => ({
   root: {
@@ -135,13 +132,7 @@ const TableData = (props) => {
                 <StyledTableCell align="center">{row.how}</StyledTableCell>
                 <StyledTableCell align="center">{row.howMuch}</StyledTableCell>
                 <StyledTableCell align="center">
-                  {" "}
-                  <Button
-                    variant="contained"
-                    style={{ backgroundColor: "#FF9800", color: "white" }}
-                  >
-                    <EditIcon />
-                  </Button>
+                <ModalEdit edit={true} name={row.name}> </ModalEdit>
                 </StyledTableCell>
                 <StyledTableCell align="center">
                <ModalDelete name={row.name}></ModalDelete>

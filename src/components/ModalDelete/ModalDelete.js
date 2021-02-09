@@ -56,18 +56,20 @@ const ModalDelete = (props) => {
       <Typography variant="subtitle1" component="h4" gutterBottom>
         Deseja mesmo deletar esse plano de ação?
       </Typography>
-      <div className={classes.root}>
-        <Button variant="contained" color="primary" onClick={handleClose}>
-          Sair
-        </Button>
-        <Button
-          variant="contained"
-          style={{ backgroundColor: "#DD014E", color: "white" }}
-          onClick={handleOpen}
-        >
-          Deletar
-        </Button>
-      </div>
+      <Grid container direction="row" justify="flex-end" alignItems="center">
+        <div className={classes.root}>
+          <Button variant="contained" color="primary" onClick={handleClose}>
+            Sair
+          </Button>
+          <Button
+            variant="contained"
+            style={{ backgroundColor: "#DD014E", color: "white" }}
+            onClick={handleOpen}
+          >
+            Deletar
+          </Button>
+        </div>
+      </Grid>
     </div>
   );
 

@@ -1,18 +1,16 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { useForm } from "react-hook-form";
-import TableData from '../../components/Table'
 
+import TableData from "../../components/Table";
+import Grid from "@material-ui/core/Grid";
 const Home = (props) => {
-  const { register, handleSubmit, watch, errors } = useForm();
-
-  const onSubmit = (data) => console.log("hey");
-
-  const [open, setOpen] = React.useState(false);
-
-  return <form onSubmit={handleSubmit(onSubmit)}>
-    <TableData></TableData>
-  </form>;
+  return (
+    <>
+      <Grid container style={{padding: '3%'}}>
+        <TableData></TableData>
+      </Grid>
+    </>
+  );
 };
 
 export default Home;
