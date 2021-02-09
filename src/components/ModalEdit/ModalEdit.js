@@ -6,6 +6,9 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import EditIcon from "@material-ui/icons/Edit";
 import TextField from "@material-ui/core/TextField";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/icons/Add";
+
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -71,10 +74,13 @@ const ModalEdit = (props) => {
       </form>
       <Grid container direction="row" justify="flex-end" alignItems="center">
         <div className={classes.root}>
-          <Button variant="contained"  style={{backgroundColor:"#A7E12E", color: 'white'}} onClick={handleClose}>
-        Salvar
+          <Button
+            variant="contained"
+            style={{ backgroundColor: "#A7E12E", color: "white" }}
+            onClick={handleClose}
+          >
+            Salvar
           </Button>
-        
         </div>
       </Grid>
     </div>
@@ -82,13 +88,20 @@ const ModalEdit = (props) => {
 
   return (
     <>
-      <Button
-        variant="contained"
-        style={{ backgroundColor: "#FF9800", color: "white" }}
-        onClick={handleOpen}
-      >
-        <EditIcon />
-      </Button>
+      {props.edit ? (
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "#FF9800", color: "white" }}
+          onClick={handleOpen}
+        >
+          <EditIcon />
+        </Button>
+      ) : (
+        <Fab color="primary" onClick={handleOpen}>
+          <AddIcon />
+        </Fab>
+      )}
+
       <Modal
         open={open}
         onClose={handleClose}
