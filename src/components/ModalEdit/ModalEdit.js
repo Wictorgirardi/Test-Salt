@@ -23,9 +23,9 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: "absolute",
-    width: 400,
+    width: 600,
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    borderRadius: "15px",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
@@ -64,6 +64,12 @@ const ModalEdit = (props) => {
       )}
 
       <form className={classes.root} noValidate autoComplete="off">
+        <TextField
+          id="Nome da Ação"
+          label="Nome da Ação"
+          placeholder="Nome da Ação"
+          defaultValue={props.name}
+        />
         <TextField
           id="What?"
           label="What?"

@@ -4,21 +4,19 @@ import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import TableData from "../../components/Table";
 import Grid from "@material-ui/core/Grid";
-import ModalEdit from 'components/ModalEdit';
-import Header from 'components/Header';
+import ModalEdit from "components/ModalEdit";
+import Header from "components/Header";
 
 const Home = (props) => {
   return (
     <>
-    <Header/>
+      <Header />
       <Grid container style={{ padding: "2%" }}>
         <TableData></TableData>
       </Grid>
       <Grid item xs={12} style={{ textAlign: "end", padding: "3%", bottom: 0 }}>
         {" "}
-        <ModalEdit edit={false} >
-          {" "}
-        </ModalEdit>
+        <ModalEdit edit={false}> </ModalEdit>
       </Grid>
     </>
   );
