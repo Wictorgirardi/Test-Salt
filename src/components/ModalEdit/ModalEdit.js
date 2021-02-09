@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Button from "@material-ui/core/Button";
@@ -9,7 +9,6 @@ import TextField from "@material-ui/core/TextField";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import { useForm, Controller } from "react-hook-form";
-import { Input, Select, MenuItem } from "@material-ui/core";
 
 function getModalStyle() {
   const top = 50;
@@ -40,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ModalEdit = (props) => {
-  const { register, handleSubmit, watch, errors, control } = useForm();
+  const { handleSubmit, errors, control } = useForm();
   const onSubmit = (data) => console.log(data);
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render

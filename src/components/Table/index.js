@@ -97,7 +97,6 @@ const useStyles = makeStyles({
 });
 
 const TableData = (props) => {
-  const { className, onChange, style, ...rest } = props;
   const classes = useStyles();
 
   return (
