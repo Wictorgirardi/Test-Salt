@@ -7,8 +7,8 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import ModalDelete from 'components/ModalDelete';
-import ModalEdit from 'components/ModalEdit';
+import ModalDelete from "components/ModalDelete";
+import ModalEdit from "components/ModalEdit";
 
 const StyledTableCell = withStyles((theme) => ({
   root: {
@@ -132,10 +132,22 @@ const TableData = (props) => {
                 <StyledTableCell align="center">{row.how}</StyledTableCell>
                 <StyledTableCell align="center">{row.howMuch}</StyledTableCell>
                 <StyledTableCell align="center">
-                <ModalEdit edit={true} name={row.name}> </ModalEdit>
+                  <ModalEdit
+                    edit={true}
+                    name={row.name}
+                    what={row.what}
+                    why={row.why}
+                    where={row.where}
+                    when={row.when}
+                    who={row.who}
+                    how={row.how}
+                    howMuch={row.howMuch}
+                  >
+                    {" "}
+                  </ModalEdit>
                 </StyledTableCell>
                 <StyledTableCell align="center">
-               <ModalDelete name={row.name}></ModalDelete>
+                  <ModalDelete name={row.name}></ModalDelete>
                 </StyledTableCell>
               </StyledTableRow>
             ))}

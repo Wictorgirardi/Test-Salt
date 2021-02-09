@@ -64,13 +64,48 @@ const ModalEdit = (props) => {
       )}
 
       <form className={classes.root} noValidate autoComplete="off">
-        <TextField id="What?" label="What?" placeholder="What?" />
-        <TextField id="Why?" label="Why?" placeholder="Why?" />
-        <TextField id="Where?" label="Where?" placeholder="Where?" />
-        <TextField id="When?" label="When?" placeholder="When?" />
-        <TextField id="Who?" label="Who?" placeholder="Who?" />
-        <TextField id="How?" label="How?" placeholder="How?" />
-        <TextField id="How Much?" label="How Much?" placeholder="How Much?" />
+        <TextField
+          id="What?"
+          label="What?"
+          placeholder="What?"
+          defaultValue={props.what}
+        />
+        <TextField
+          id="Why?"
+          label="Why?"
+          placeholder="Why?"
+          defaultValue={props.why}
+        />
+        <TextField
+          id="Where?"
+          label="Where?"
+          placeholder="Where?"
+          defaultValue={props.where}
+        />
+        <TextField
+          id="When?"
+          label="When?"
+          placeholder="When?"
+          defaultValue={props.when}
+        />
+        <TextField
+          id="Who?"
+          label="Who?"
+          placeholder="Who?"
+          defaultValue={props.who}
+        />
+        <TextField
+          id="How?"
+          label="How?"
+          placeholder="How?"
+          defaultValue={props.how}
+        />
+        <TextField
+          id="How Much?"
+          label="How Much?"
+          placeholder="How Much?"
+          defaultValue={props.howMuch}
+        />
       </form>
       <Grid container direction="row" justify="flex-end" alignItems="center">
         <div className={classes.root}>

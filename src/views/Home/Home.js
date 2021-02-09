@@ -5,11 +5,13 @@ import AddIcon from "@material-ui/icons/Add";
 import TableData from "../../components/Table";
 import Grid from "@material-ui/core/Grid";
 import ModalEdit from 'components/ModalEdit';
+import Header from 'components/Header';
 
 const Home = (props) => {
   return (
     <>
-      <Grid container style={{ padding: "3%" }}>
+    <Header/>
+      <Grid container style={{ padding: "2%" }}>
         <TableData></TableData>
       </Grid>
       <Grid item xs={12} style={{ textAlign: "end", padding: "3%", bottom: 0 }}>
