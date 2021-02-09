@@ -8,6 +8,8 @@ import EditIcon from "@material-ui/icons/Edit";
 import TextField from "@material-ui/core/TextField";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
+import { useForm, Controller } from "react-hook-form";
+import { Input, Select, MenuItem } from "@material-ui/core";
 
 function getModalStyle() {
   const top = 50;
@@ -38,6 +40,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ModalEdit = (props) => {
+  const { register, handleSubmit, watch, errors, control } = useForm();
+  const onSubmit = (data) => console.log(data);
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -63,67 +67,92 @@ const ModalEdit = (props) => {
         </Typography>
       )}
 
-      <form className={classes.root} noValidate autoComplete="off">
-        <TextField
-          id="Nome da Ação"
-          label="Nome da Ação"
-          placeholder="Nome da Ação"
-          defaultValue={props.name}
+      <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          as={TextField}
+          error={errors.NomePlanodeação}
+          rules={{ required: true }}
+          name="NomePlanodeação"
+          label="Nome Plano de ação"
+          defaultValue={props.name !== undefined ? props.name : ""}
+          control={control}
         />
-        <TextField
-          id="What?"
+        <Controller
+          as={TextField}
+          rules={{ required: true }}
+          error={errors.What}
+          name="What"
           label="What?"
-          placeholder="What?"
-          defaultValue={props.what}
+          defaultValue={props.what !== undefined ? props.what : ""}
+          control={control}
         />
-        <TextField
-          id="Why?"
+        <Controller
+          as={TextField}
+          rules={{ required: true }}
+          error={errors.Why}
+          name="Why"
           label="Why?"
-          placeholder="Why?"
-          defaultValue={props.why}
+          defaultValue={props.why !== undefined ? props.why : ""}
+          control={control}
         />
-        <TextField
-          id="Where?"
+        <Controller
+          as={TextField}
+          rules={{ required: true }}
+          error={errors.Where}
+          name="Where"
           label="Where?"
-          placeholder="Where?"
-          defaultValue={props.where}
+          defaultValue={props.where !== undefined ? props.where : ""}
+          control={control}
         />
-        <TextField
-          id="When?"
+        <Controller
+          as={TextField}
+          rules={{ required: true }}
+          error={errors.When}
+          name="When"
           label="When?"
-          placeholder="When?"
-          defaultValue={props.when}
+          defaultValue={props.when !== undefined ? props.when : ""}
+          control={control}
         />
-        <TextField
-          id="Who?"
+        <Controller
+          as={TextField}
+          rules={{ required: true }}
+          error={errors.Who}
+          name="Who"
           label="Who?"
-          placeholder="Who?"
-          defaultValue={props.who}
+          defaultValue={props.who !== undefined ? props.who : ""}
+          control={control}
         />
-        <TextField
-          id="How?"
+        <Controller
+          as={TextField}
+          rules={{ required: true }}
+          error={errors.How}
+          name="How"
           label="How?"
-          placeholder="How?"
-          defaultValue={props.how}
+          defaultValue={props.how !== undefined ? props.how : ""}
+          control={control}
         />
-        <TextField
-          id="How Much?"
+        <Controller
+          as={TextField}
+          name="HowMuch"
+          error={errors.HowMuch}
+          rules={{ required: true }}
           label="How Much?"
-          placeholder="How Much?"
-          defaultValue={props.howMuch}
+          defaultValue={props.howMuch !== undefined ? props.howMuch : ""}
+          control={control}
         />
+
+        <Grid container direction="row" justify="flex-end" alignItems="center">
+          <div className={classes.root}>
+            <Button
+              type="submit"
+              variant="contained"
+              style={{ backgroundColor: "#A7E12E", color: "white" }}
+            >
+              Salvar
+            </Button>
+          </div>
+        </Grid>
       </form>
-      <Grid container direction="row" justify="flex-end" alignItems="center">
-        <div className={classes.root}>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: "#A7E12E", color: "white" }}
-            onClick={handleClose}
-          >
-            Salvar
-          </Button>
-        </div>
-      </Grid>
     </div>
   );
 
