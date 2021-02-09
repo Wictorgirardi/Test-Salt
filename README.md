@@ -10,3 +10,7 @@ A metodologia 5W2H é famosa por auxiliar no processo de desenvolvimento de plan
 - Who? (Quem?)
 - How? (Como?)
 - How Much? (Quanto?)
+
+## Execução do projeto:
+- Rode o comando Yarn;
+- Rode o comando Yarn run e vá para o link: Localhost:3000 no seu navegador.
